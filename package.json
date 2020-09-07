@@ -42,5 +42,8 @@
 		"typescript": "^3.8.3",
 		"vscode-test": "^1.4.0"
 	},
-	"dependencies": {}
+	"dependencies": {},
+	"volta": {
+		"node": "12.18.3"
+	}
 }
