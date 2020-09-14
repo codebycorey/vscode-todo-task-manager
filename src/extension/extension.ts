@@ -25,7 +25,13 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		);
 		// And set its HTML content
-		panel.webview.html = getWebviewContent(context);
+        panel.webview.html = getWebviewContent(context);
+
+        setInterval(() => {
+            panel.webview.postMessage({ test: 'blah' })
+        }, 2000)
+        console.log('OPENED');
+        panel.webview.onDidReceiveMessage((message) => console.log('MESSAGE', message))
 	});
 
 	context.subscriptions.push(disposable);

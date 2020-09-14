@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-console.log('TESTREACT');
+
+import { VSCodeMessage } from './lib/VSCodeMessage';
+
+// import { setTimeout } from 'timers';
+
+const dispose = VSCodeMessage.onMessage((message) => console.log('index', message));
+setTimeout(() => dispose(), 6000);
+
+VSCodeMessage.postMessage('BAM!');
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
